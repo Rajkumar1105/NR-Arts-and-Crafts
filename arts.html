@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NR Arts</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Dancing+Script:wght@400..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: Roboto, Arial, sans-serif;
+      background: url("https://www.transparenttextures.com/patterns/painted-wall.png");
+      background-color: #fff5f7; /* Soft blush */
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    header {
+      background: linear-gradient(135deg, #800020, #B03060); /* Burgundy tones */
+      color: #F4C2C2; /* Blush text */
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 2.5rem;
+      font-weight: bold;
+      animation: slideDown 1s ease-out;
+      border-bottom-left-radius: 25px;
+      border-bottom-right-radius: 25px;
+      font-family: "Dancing Script", cursive;
+      letter-spacing: 1.5px;
+    }
+
+    nav {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    nav button {
+      margin: 10px;
+      padding: 12px 25px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background: #800020; /* Burgundy */
+      color: #FFFFFF;
+      transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
+    }
+
+    nav button:hover {
+      transform: scale(1.1);
+      background: #B03060; /* Lighter Burgundy */
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    #categories {
+      display: none;
+      text-align: center;
+      margin-top: 20px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    #categories h2 {
+      color: #800020;
+      margin-bottom: 20px;
+    }
+
+    #categories button {
+      padding: 14px 28px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      background: linear-gradient(135deg, #F4C2C2, #ffdde1); /* Blush gradient */
+      color: #800020; /* Burgundy text */
+      font-weight: bold;
+      animation: bounceIn 1s ease;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    #categories button:hover {
+      transform: scale(1.15);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+      background: linear-gradient(135deg, #ffb6c1, #f4c2c2);
+    }
+
+    .gallery {
+      text-align: center;
+      margin: 40px 20px;
+    }
+
+    .gallery h2 {
+      color: #800020;
+      margin-bottom: 20px;
+    }
+
+    .gallery img {
+      width: 175px;
+      height: 175px;
+      object-fit: cover;
+      object-position: center;
+      margin: 15px;
+      border-radius: 15px;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+      border: 3px solid #F4C2C2; /* Blush border */
+    }
+
+    .gallery img:hover {
+      transform: scale(1.2);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #800020;
+      color: #FFFFFF;
+      margin-top: 100px;
+      border-top-left-radius: 25px;
+      border-top-right-radius: 25px;
+      animation: fadeIn 2s ease-in;
+    }
+
+    /* Popup Styles */
+    .popup-overlay {
+      display: none; 
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      align-items: center;
+      justify-content: center;
+      animation: fadeIn 0.5s ease;
+    }
+
+    .popup-box {
+      background: #fff;
+      padding: 25px;
+      border-radius: 15px;
+      text-align: center;
+      width: 300px;
+      animation: scaleUp 0.4s ease;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      border: 2px solid #F4C2C2; /* Blush border */
+    }
+
+    .popup-box h3 {
+      margin-bottom: 20px;
+      font-size: 1.2rem;
+      color: #800020;
+    }
+
+    .popup-box button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    .popup-box .yes-btn {
+      background: #800020; 
+      color: #fff;
+    }
+
+    .popup-box .yes-btn:hover {
+      background: #B03060;
+      transform: scale(1.1);
+    }
+
+    .popup-box .no-btn {
+      background: #F4C2C2;
+      color: #800020;
+    }
+
+    .popup-box .no-btn:hover {
+      background: #ffb6c1;
+      transform: scale(1.1);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-100%); }
+      to { transform: translateY(0); }
+    }
+
+    @keyframes bounceIn {
+      0% { transform: scale(0.5); opacity: 0; }
+      60% { transform: scale(1.2); opacity: 1; }
+      80% { transform: scale(0.9); }
+      100% { transform: scale(1); }
+    }
+
+    @keyframes scaleUp {
+      from { transform: scale(0.5); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    Welcome to NR Arts 
+  </header>
+
+  <nav>
+    <button onclick="location.href='index.html'">Home</button>
+    <button onclick="showCategories()">Categories</button>
+    <button onclick="location.href='index.html'">Contact Info</button>
+  </nav>
+
+  <!-- Categories Section -->
+  <div id="categories">
+    <h2>Categories</h2>
+    <button onclick="showMehandi()"> ✨Mehandi Arts✨ </button>
+  </div>
+
+  <!-- Mehandi Gallery -->
+  <div class="gallery" id="mehandiGallery" style="display:none;">
+    <h2>Mehandi Arts Collection</h2>
+    <img src="pictures/arts-1.png" alt="Mehandi 1" onclick="showPopup(this)">
+    <img src="pictures/arts-2.png" alt="Mehandi 2" onclick="showPopup(this)">
+    <img src="pictures/arts-3.png" alt="Mehandi 3" onclick="showPopup(this)">
+    <img src="pictures/arts-4.png" alt="Mehandi 4" onclick="showPopup(this)">
+    <img src="pictures/arts-5.png" alt="Mehandi 5" onclick="showPopup(this)">
+    <img src="pictures/arts-7.png" alt="Mehandi 7" onclick="showPopup(this)">
+    <img src="pictures/design-image1.jpg" alt="Mehandi 8" onclick="showPopup(this)">
+    <img src="pictures/design-image2.jpg" alt="Mehandi 7" onclick="showPopup(this)">
+    <img src="pictures/design-image3.jpg" alt="Mehandi 7" onclick="showPopup(this)">
+    <img src="pictures/design-image4.jpg" alt="Mehandi 7" onclick="showPopup(this)">
+
+  </div>
+
+  <!-- Custom Popup -->
+  <div class="popup-overlay" id="popup">
+    <div class="popup-box">
+      <h3>Do you want to know more about this art?</h3>
+      <button class="yes-btn" onclick="goToWhatsApp()">Yes</button>
+      <button class="no-btn" onclick="closePopup()">No</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <p>Website owned by <strong>Nithya</strong>.Created by RS Web Technologies All rights reserved © 2025.</p>
+  </footer>
+
+  <script>
+    function showCategories() {
+      document.getElementById("categories").style.display = "block";
+    }
+
+    function showMehandi() {
+      document.getElementById("mehandiGallery").style.display = "block";
+      window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function showPopup() {
+      document.getElementById("popup").style.display = "flex";
+    }
+
+    function closePopup() {
+      document.getElementById("popup").style.display = "none";
+    }
+
+    function goToWhatsApp() {
+      const message = "Hi, I want to know more about this Mehandi Art!";
+      const phone = "917680060323"; // without '+' and spaces
+      window.location.href = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+    }
+  </script>
+
+</body>
+</html>

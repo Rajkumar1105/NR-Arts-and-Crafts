@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NR CRAFTS AND DESIGNS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Dancing+Script:wght@400..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Imperial+Script&family=Monsieur+La+Doulaise&display=swap" rel="stylesheet">
+  <style>
+    /* Page background with gradient - Burgundy + Blush Pink */
+    body {
+      background: linear-gradient(135deg, #800020, #ffb6c1);
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      position: relative;
+      overflow-x: hidden;
+      outline: none;
+      user-select: none;
+    }
+
+    /* Decorative corner designs */
+    .corner {
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      z-index: 0;
+    }
+    .top-left { top: -50px; left: -50px; }
+    .top-right { top: -50px; right: -50px; }
+    .bottom-left { bottom: -50px; left: -50px; }
+    .bottom-right { bottom: -50px; right: -50px; }
+
+    /* Container styling */
+    .icon-container {
+      display: inline-block;
+      padding: 50px;
+      margin: 30px;
+      background-color: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(128,0,32,0.25); /* Burgundy shadow */
+      transition: transform 0.3s;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Hover effect */
+    .icon-container:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 28px rgba(128,0,32,0.35);
+    }
+
+    /* Default icon size */
+    .icons {
+      width: 400px;
+      cursor: pointer;
+      border-radius: 12px;
+      border: 3px solid #ffb6c1; /* blush pink border */
+    }
+
+    /* Page title styling */
+    h1 {
+      margin-top: 50px;
+      color: #e9e7e8; /* Burgundy */
+      font-size: 34px;
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      line-height: 1.4;
+      font-weight: 600;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0 20px;
+      font-family:"Dancing Script", Roboto;
+    }
+
+    /* Footer styling */
+    footer.contact-section {
+      margin-top: 50px;
+      background-color: #ffffff;
+      padding: 60px 20px;
+      border-radius: 15px;
+      display: inline-block;
+      box-shadow: 0 8px 16px rgba(128,0,32,0.25);
+      text-align: left;
+      max-width: 800px;
+      z-index: 1;
+      position: relative;
+    }
+
+    .instagram {
+      display: inline-block;
+      padding-left: 120px;
+    }
+     .Mail{
+      display: inline-block;
+     }
+    .ig-logo, .mail-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 6px;
+      transition: border 0.4s;
+
+    }
+    .ig-logo:hover,.mail-icon:hover{
+      border: 1px solid #800020;
+    }
+
+    footer h2 {
+      margin-bottom: 15px;
+      color: #800020;
+      font-size: 24px;
+      text-align: center;
+    }
+
+    footer p, footer a {
+      font-size: 18px;
+      color: #333;
+      text-decoration: none;
+      line-height: 1.5;
+    }
+
+    footer a:hover {
+      color: #800020;
+    }
+
+    /* Responsive adjustments */
+    @media screen and (max-width: 900px) {
+      .icons {
+        width: 300px;
+      }
+      h1 {
+        font-size: 26px;
+      }
+      footer {
+        max-width: 90%;
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      .icons {
+        width: 250px;
+      }
+      h1 {
+        font-size: 22px;
+      }
+      .icon-container {
+        padding: 30px;
+        margin: 20px;
+      }
+      footer {
+        padding: 30px 15px;
+      }
+    }
+  </style>
+
+  <!-- Anime.js Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+</head>
+<body>
+
+  <!-- Corner designs -->
+  <div class="corner top-left"></div>
+  <div class="corner top-right"></div>
+  <div class="corner bottom-left"></div>
+  <div class="corner bottom-right"></div>
+
+  <!-- Page Title -->
+  <h1>Transform your ideas into reality with NR Crafts & Arts – where imagination meets craftsmanship</h1>
+
+  <!-- Images -->
+  <div class="icon-container">
+    <a href="craftsexp.html">
+    <img class="icons" src="pictures/crafts.png">
+    </a>
+  </div>
+  <div class="icon-container">
+    <a href="arts.html">
+    <img class="icons" src="pictures/arts.jpeg">
+    </a>
+  </div>
+
+  <!-- Footer with contact info -->
+  <footer class="contact-section">
+    <h2>Contact Us</h2>
+    <p><strong>Address:</strong> Maruthinagar, Karimnagar, Telangana</p>
+    <p><strong>Phone:</strong> +91 76800 60323</p>
+    <div class="instagram">
+      <a href="https://www.instagram.com/nr__crafts?igsh=MTBzdmV1NWZoazR5aA==" target="_blank">
+        <img class="ig-logo" src="pictures/ig-logo-final.jpg">
+        </a>
+    </div>
+    <div class="Mail">
+      <a href="mailto:nrcraftsspace@gmail.com" target="_blank">
+        <img class="mail-icon" src="pictures/mail-logo.jpg">
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    // Animate images on page load
+    anime({
+      targets: '.icons',
+      translateY: [-100, 0],
+      opacity: [0, 1],
+      scale: [0.5, 1],
+      delay: anime.stagger(500),
+      duration: 2000,
+      easing: 'easeOutElastic(1, .8)'
+    });
+
+    // Animate footer
+    anime({
+      targets: '.contact-section',
+      translateY: [100, 0], // slide up from below
+      opacity: [0, 1],
+      duration: 2000,
+      delay: 1500, // starts after images
+      easing: 'easeOutExpo'
+    });
+  </script>
+
+</body>
+</html>
